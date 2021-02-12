@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Einkommenssteuerrechner</title>
+</head>
+
+<body>
+
+    <section>
+        <p>Bitte wählen Sie Veranlagungsjahr</p>
+        <form action="" id="yearSelect">
+
+            <input type="radio" name="year" id="y2019" value="19" onchange="selectYear()">
+            <label for="radio">2019</label>
+            <input type="radio" name="year" id="y2020" onchange="selectYear()">
+            <label for="radio">2020</label>
+            <input type="radio" name="year" id="y2021" onchange="selectYear()">
+            <label for="radio">2021</label>
+            <p id="errorYear" style="color:red"></p>
+        </form>
+
+        <p>Bitte wählen Sie Veranlagungsform</p>
+        <form action="" id="formSelect">
+            <input type="radio" name="zvE" id="solo" value="19" onchange="selectZve()">
+            <label for="radio">Grundtarif</label>
+            <input type="radio" name="zvE" id="couple" onchange="selectZve()">
+            <label for="radio">Splittingtarif</label>
+            <p id="errorTarif" style="color: red;"></p>
+        </form>
+
+        <form action="">
+            <br>
+            <p>Bitte jährliches Bruttoeinkommen eingeben:</p>
+            <input type="number" name="" id="sumYear1">
+            <p id="errorInput1" style="color: red; display: none;"></p>
+
+        </form>
+
+        <form action="" id="secondPerson" style="display: none;">
+            <br>
+            <p>Bitte jährliches Bruttoeinkommen Ihres Partners eingeben:</p>
+            <input type="number" name="" id="sumYear2">
+            <p id="errorInput2" style="color: red; display: none;"></p>
+
+        </form>
+
+        <form action="">
+            <br>
+            <input type="button" value="BERECHNEN" onclick="showCalc()">
+        </form>
+
+        <h3 id="showSteuer"></h3>
+        <h3 id="showNetto"></h3>
+
+
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
