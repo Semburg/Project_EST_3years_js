@@ -5,51 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Einkommenssteuerrechner</title>
 </head>
 
 <body>
-
     <section>
         <p>Bitte wählen Sie Veranlagungsjahr</p>
-        <form action="" id="yearSelect">
+        <form id="yearSelect">
 
             <input type="radio" name="year" id="y2019" value="19" onchange="selectYear()">
-            <label for="radio">2019</label>
+            <label for="y2019">2019</label>
             <input type="radio" name="year" id="y2020" onchange="selectYear()">
-            <label for="radio">2020</label>
+            <label for="y2020">2020</label>
             <input type="radio" name="year" id="y2021" onchange="selectYear()">
-            <label for="radio">2021</label>
+            <label for="y2021">2021</label>
+
+         <!-- *  for error message  -->
             <p id="errorYear" style="color:red"></p>
         </form>
 
         <p>Bitte wählen Sie Veranlagungsform</p>
-        <form action="" id="formSelect">
+        <form id="formSelect">
             <input type="radio" name="zvE" id="solo" value="19" onchange="selectZve()">
-            <label for="radio">Grundtarif</label>
+            <label for="solo">Grundtarif</label>
             <input type="radio" name="zvE" id="couple" onchange="selectZve()">
-            <label for="radio">Splittingtarif</label>
+            <label for="couple">Splittingtarif</label>
+
+         <!-- *  for error message  -->
             <p id="errorTarif" style="color: red;"></p>
         </form>
 
-        <form action="">
+        <form>
             <br>
             <p>Bitte jährliches Bruttoeinkommen eingeben:</p>
-            <input type="number" name="" id="sumYear1">
+            <input type="number" id="sumYear1">
+
+         <!-- *  for error message  -->
             <p id="errorInput1" style="color: red; display: none;"></p>
 
         </form>
 
-        <form action="" id="secondPerson" style="display: none;">
+        <form id="secondPerson" style="display: none;">
             <br>
             <p>Bitte jährliches Bruttoeinkommen Ihres Partners eingeben:</p>
-            <input type="number" name="" id="sumYear2">
+            <input type="number" id="sumYear2">
+
+         <!-- *  for error message  -->
             <p id="errorInput2" style="color: red; display: none;"></p>
 
         </form>
 
-        <form action="">
+        <form>
             <br>
             <input type="button" value="BERECHNEN" onclick="showCalc()">
         </form>

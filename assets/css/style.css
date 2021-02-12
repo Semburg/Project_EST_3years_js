@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito Sans', sans-serif;
+}
+section{
+    padding: 20px;
+    animation: sectionGlow 4s infinite;
+}
+input[type=button]{
+    width: 100%;
+
+}
+@keyframes sectionGlow{
+    0%, 100%{box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
+    50%{box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;}
+}
