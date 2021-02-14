@@ -12,6 +12,13 @@ section{
     padding: 20px;
     animation: sectionGlow 4s infinite;
 }
+
+div{
+    text-align: center;
+}
+h2{
+    font-family: 'Ballet', cursive;
+}
 input[type=button]{
     width: 100%;
 
@@ -19,4 +26,12 @@ input[type=button]{
 @keyframes sectionGlow{
     0%, 100%{box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
     50%{box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;}
+}
+form{
+    background-color: rgb(190, 219, 210);
+}
+
+
+#resultField{
+    background-color: rgb(209, 209, 216);
 }

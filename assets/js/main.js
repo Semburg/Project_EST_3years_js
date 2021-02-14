@@ -46,12 +46,16 @@ function showCalc(){
     document.getElementById("errorInput2").style.display = "none";
     document.getElementById("errorInput2").innerHTML = "";
 
+    //*    variable for split full netto
+    let halfBrutto;
+
     switch (tarifToCalculate){
         case "grund":
             zvEnd = Number(sumYear1.value);
             break;
         case "split":
             zvEnd = (Number(sumYear1.value) + Number(sumYear2.value))/2;
+            halfBrutto = (Number(sumYear1.value) + Number(sumYear2.value))/2;
             break;
         default:
             console.log("something is gonna wrond but works");
@@ -88,34 +92,29 @@ function showCalc(){
 
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
-
-
 
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt);
 
-
-
-            console.log(eSt)
-            console.log("Einkommensteuer nach Abrechnung = " + eSt);
         }else if(zvEnd > 14753 && zvEnd<= 57918){
             let y = (zvEnd - 14753)/10000;
             eSt = ((208.85*y+2397)*y + 950.96).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
+
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt).toFixed(2);
             //!   Why is toFixed not working by 28000 from line 108?  btw how to fix this -fixed by adding toFixed in line 110
 
-
-            console.log(eSt)
-            console.log("Einkommensteuer nach Abrechnung = " + eSt);
         } else if(zvEnd > 57918 && zvEnd<= 274612){
             eSt = (0.42*zvEnd -9136.63).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt).toFixed(2);
@@ -123,6 +122,7 @@ function showCalc(){
             eSt = (0.45*zvEnd -17374.99).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt).toFixed(2);
@@ -138,6 +138,7 @@ function showCalc(){
             eSt = ((980.14*y+1400)*y).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt);
@@ -147,6 +148,7 @@ function showCalc(){
             eSt = ((216.16*y+2397)*y + 965.58).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt).toFixed(2);
@@ -155,6 +157,7 @@ function showCalc(){
             eSt = (0.42*zvEnd -8780.90).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt).toFixed(2);
@@ -162,6 +165,7 @@ function showCalc(){
             eSt = (0.45*zvEnd -16740.68).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt).toFixed(2);
@@ -177,6 +181,7 @@ function showCalc(){
             eSt = ((972.87*y+1400)*y).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt);
@@ -186,6 +191,7 @@ function showCalc(){
             eSt = ((212.02*y+2397)*y + 972.79).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt).toFixed(2);
@@ -194,6 +200,7 @@ function showCalc(){
             eSt = (0.42*zvEnd -8963.74).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt).toFixed(2);
@@ -201,12 +208,13 @@ function showCalc(){
             eSt = (0.45*zvEnd -17078.74).toFixed(2);
             if(tarifToCalculate == "split"){
                 eSt*=2;
+                zvEnd *=2;
             }
             showEST.innerHTML = "Steuerbetrag: " + eSt;
             showMeMyMoney.innerHTML = "Netto im Jahr: " + (zvEnd-eSt).toFixed(2);
         }
     } else (
-        document.getElementById("errorYear").innerHTML = "Year is not defined"
+        document.getElementById("errorYear").innerHTML = "Bitte wählen Sie Abrechnungsjahr."
     )
 }
 
